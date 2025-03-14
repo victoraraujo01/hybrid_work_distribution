@@ -1,0 +1,143 @@
+300/500/0.4/0.6/Segregado
+
+Melhores Indivíduos:
+Gerência	Segunda	Terça	Quarta	Quinta	Sexta
+0	A_Próprio	4	4	4	0	0
+1	A_Terceirizado	0	0	0	0	0
+2	B_Próprio	0	0	17	17	17
+3	B_Terceirizado	1	0	0	1	0
+4	C_Próprio	0	61	0	61	61
+5	C_Terceirizado	0	0	0	13	13
+6	D_Próprio	3	3	3	0	0
+7	D_Terceirizado	0	0	0	0	0
+8	E_Próprio	52	52	52	0	0
+9	E_Terceirizado	8	8	0	0	0
+10	F_Próprio	0	0	72	72	72
+11	F_Terceirizado	0	0	0	18	18
+12	G_Próprio	35	35	35	0	0
+13	G_Terceirizado	24	24	0	0	0
+14	H_Próprio	0	0	0	0	0
+15	H_Terceirizado	4	4	0	0	0
+16	I_Próprio	29	29	29	0	0
+17	I_Terceirizado	7	7	0	0	0
+18	J_Próprio	48	0	48	48	0
+19	J_Terceirizado	0	0	0	13	13
+20	K_Próprio	0	11	11	0	11
+21	K_Terceirizado	0	1	0	0	1
+22	L_Próprio	0	13	0	13	13
+23	L_Terceirizado	4	4	0	0	0
+Total	Total	219	256	271	256	219
+True
+(np.float64(0.8992353663300913), 0.8928571428571429)
+Gerência	Segunda	Terça	Quarta	Quinta	Sexta
+0	A_Próprio	4	4	4	0	0
+1	A_Terceirizado	0	0	0	0	0
+2	B_Próprio	0	0	17	17	17
+3	B_Terceirizado	0	0	0	1	1
+4	C_Próprio	0	61	0	61	61
+5	C_Terceirizado	0	0	0	13	13
+6	D_Próprio	3	3	3	0	0
+7	D_Terceirizado	0	0	0	0	0
+8	E_Próprio	52	52	52	0	0
+9	E_Terceirizado	8	8	0	0	0
+10	F_Próprio	0	0	72	72	72
+11	F_Terceirizado	0	0	0	18	18
+12	G_Próprio	35	35	35	0	0
+13	G_Terceirizado	24	24	0	0	0
+14	H_Próprio	0	0	0	0	0
+15	H_Terceirizado	4	4	0	0	0
+16	I_Próprio	29	29	29	0	0
+17	I_Terceirizado	7	7	0	0	0
+18	J_Próprio	48	0	48	48	0
+19	J_Terceirizado	0	0	0	13	13
+20	K_Próprio	0	11	11	0	11
+21	K_Terceirizado	1	1	0	0	0
+22	L_Próprio	0	13	0	13	13
+23	L_Terceirizado	4	4	0	0	0
+Total	Total	219	256	271	256	219
+True
+(np.float64(0.8992353663300913), 0.8928571428571429)
+Gerência	Segunda	Terça	Quarta	Quinta	Sexta
+0	A_Próprio	4	4	4	0	0
+1	A_Terceirizado	0	0	0	0	0
+2	B_Próprio	0	0	17	17	17
+3	B_Terceirizado	0	0	0	1	1
+4	C_Próprio	0	61	0	61	61
+5	C_Terceirizado	0	0	0	13	13
+6	D_Próprio	3	3	3	0	0
+7	D_Terceirizado	0	0	0	0	0
+8	E_Próprio	52	52	52	0	0
+9	E_Terceirizado	8	8	0	0	0
+10	F_Próprio	0	0	72	72	72
+11	F_Terceirizado	0	0	0	18	18
+12	G_Próprio	35	35	35	0	0
+13	G_Terceirizado	24	24	0	0	0
+14	H_Próprio	0	0	0	0	0
+15	H_Terceirizado	4	4	0	0	0
+16	I_Próprio	29	29	29	0	0
+17	I_Terceirizado	7	7	0	0	0
+18	J_Próprio	48	0	48	48	0
+19	J_Terceirizado	0	0	0	13	13
+20	K_Próprio	0	11	11	0	11
+21	K_Terceirizado	0	1	0	0	1
+22	L_Próprio	0	13	0	13	13
+23	L_Terceirizado	4	4	0	0	0
+Total	Total	218	256	271	256	220
+True
+(np.float64(0.899005814863723), 0.9285714285714286)
+Gerência	Segunda	Terça	Quarta	Quinta	Sexta
+0	A_Próprio	4	4	4	0	0
+1	A_Terceirizado	0	0	0	0	0
+2	B_Próprio	17	0	17	17	0
+3	B_Terceirizado	1	0	0	1	0
+4	C_Próprio	0	61	0	61	61
+5	C_Terceirizado	0	0	0	13	13
+6	D_Próprio	3	3	3	0	0
+7	D_Terceirizado	0	0	0	0	0
+8	E_Próprio	52	52	52	0	0
+9	E_Terceirizado	8	8	0	0	0
+10	F_Próprio	0	0	72	72	72
+11	F_Terceirizado	18	0	0	18	0
+12	G_Próprio	35	35	35	0	0
+13	G_Terceirizado	24	24	0	0	0
+14	H_Próprio	0	0	0	0	0
+15	H_Terceirizado	4	4	0	0	0
+16	I_Próprio	29	29	29	0	0
+17	I_Terceirizado	7	7	0	0	0
+18	J_Próprio	0	0	48	48	48
+19	J_Terceirizado	0	0	0	13	13
+20	K_Próprio	0	11	0	11	11
+21	K_Terceirizado	0	0	0	1	1
+22	L_Próprio	13	13	13	0	0
+23	L_Terceirizado	4	4	0	0	0
+Total	Total	219	255	273	255	219
+True
+(np.float64(0.898627122517759), 0.9642857142857143)
+Gerência	Segunda	Terça	Quarta	Quinta	Sexta
+0	A_Próprio	4	4	4	0	0
+1	A_Terceirizado	0	0	0	0	0
+2	B_Próprio	17	0	17	17	0
+3	B_Terceirizado	1	0	0	1	0
+4	C_Próprio	0	61	0	61	61
+5	C_Terceirizado	0	0	0	13	13
+6	D_Próprio	3	3	3	0	0
+7	D_Terceirizado	0	0	0	0	0
+8	E_Próprio	52	52	52	0	0
+9	E_Terceirizado	8	8	0	0	0
+10	F_Próprio	0	0	72	72	72
+11	F_Terceirizado	0	0	0	18	18
+12	G_Próprio	35	35	35	0	0
+13	G_Terceirizado	24	24	0	0	0
+14	H_Próprio	0	0	0	0	0
+15	H_Terceirizado	4	4	0	0	0
+16	I_Próprio	29	29	29	0	0
+17	I_Terceirizado	7	7	0	0	0
+18	J_Próprio	0	0	48	48	48
+19	J_Terceirizado	0	0	0	13	13
+20	K_Próprio	11	11	0	11	0
+21	K_Terceirizado	1	0	0	1	0
+22	L_Próprio	13	13	13	0	0
+23	L_Terceirizado	4	4	0	0	0
+Total	Total	213	255	273	255	225
+True
+(np.float64(0.8902077331256404), 1.0)
