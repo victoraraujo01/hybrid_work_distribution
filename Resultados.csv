@@ -1,0 +1,42 @@
+;Algoritmo;# Gerações;População;% Crossover;% Mutação;Seleção;Função Objetivo;Valor;;
+1;eaMuPlusLambda;150;300;40%;60%;Torneio;Agregada;1,88;;
+2;eaMuPlusLambda;150;300;40%;60%;Torneio;Agregada;1,85;;
+3;eaMuPlusLambda;150;300;40%;60%;Torneio;Agregada;1,88;;
+4;eaMuPlusLambda;150;300;60%;40%;Torneio;Agregada;1,79;;
+5;eaMuPlusLambda;150;300;60%;40%;Torneio;Agregada;1,75;;
+6;eaMuPlusLambda;150;300;60%;40%;Torneio;Agregada;1,89;;
+7;eaMuPlusLambda;300;500;40%;60%;Torneio;Agregada;1,88;;Aumento de gerações e população não mudou a convergência de maneira geral
+8;eaMuPlusLambda;300;500;40%;60%;Torneio;Agregada;1,85;;Apenas em 1 caso (12) a convergência ocorreu após a geração 150 (~230)
+9;eaMuPlusLambda;300;500;40%;60%;Torneio;Agregada;1,89;;No caso 4 a convergência ocorreu aprox na geração 130
+10;eaMuPlusLambda;300;500;60%;40%;Torneio;Agregada;1,82;;Todos os outros convergiram antes da geração 100
+11;eaMuPlusLambda;300;500;60%;40%;Torneio;Agregada;1,78;;
+12;eaMuPlusLambda;300;500;60%;40%;Torneio;Agregada;1,89;;
+13;eaSimple;150;300;40%;60%;Torneio;Agregada;1,88;;
+14;eaSimple;150;300;40%;60%;Torneio;Agregada;1,84;;
+15;eaSimple;150;300;40%;60%;Torneio;Agregada;1,79;;
+16;eaSimple;150;300;60%;40%;Torneio;Agregada;1,86;;
+17;eaSimple;150;300;60%;40%;Torneio;Agregada;1,86;;
+18;eaSimple;150;300;60%;40%;Torneio;Agregada;1,86;;
+19;eaSimple;300;500;40%;60%;Torneio;Agregada;1,88;;
+20;eaSimple;300;500;40%;60%;Torneio;Agregada;1,88;;
+21;eaMuPlusLambda;150;300;40%;60%;NSGA-II;Segregada;0,888;0,929;
+22;eaMuPlusLambda;150;300;40%;60%;NSGA-II;Segregada;0,883;1;
+23;eaMuPlusLambda;150;300;40%;60%;NSGA-II;Segregada;0,893;0,964;
+24;eaMuPlusLambda;150;300;60%;40%;NSGA-II;Segregada;0,899;0,964;
+25;eaMuPlusLambda;150;300;60%;40%;NSGA-II;Segregada;0,895;0,929;
+26;eaMuPlusLambda;150;300;60%;40%;NSGA-II;Segregada;0,883;1;
+27;eaMuPlusLambda;300;500;40%;60%;NSGA-II;Segregada;0,89;1;
+28;eaMuPlusLambda;300;500;40%;60%;NSGA-II;Segregada;0,883;1;
+29;eaMuPlusLambda;300;500;40%;60%;NSGA-II;Segregada;0,884;1;
+30;eaMuPlusLambda;300;500;60%;40%;NSGA-II;Segregada;0,89;1;
+31;eaMuPlusLambda;300;500;60%;40%;NSGA-II;Segregada;0,877;1;
+32;eaMuPlusLambda;300;500;60%;40%;NSGA-II;Segregada;0,883;1;
+33;eaSimple;150;300;40%;60%;NSGA-II;Segregada;0,857;0,893;
+34;eaSimple;150;300;40%;60%;NSGA-II;Segregada;0,897;0,821;
+35;eaSimple;150;300;40%;60%;NSGA-II;Segregada;0,881;0,821;
+36;eaSimple;150;300;60%;40%;NSGA-II;Segregada;0,874;0,857;
+37;eaSimple;150;300;60%;40%;NSGA-II;Segregada;0,88;0,876;
+38;eaSimple;150;300;60%;40%;NSGA-II;Segregada;0,874;0,893;
+39;eaSimple;300;500;40%;60%;NSGA-II;Segregada;0,859;0,857;
+40;eaSimple;300;500;40%;60%;NSGA-II;Segregada;0,891;0,857;
+41;eaSimple;300;500;40%;60%;NSGA-II;Segregada;0,891;0,857;
