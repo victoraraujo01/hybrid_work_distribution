@@ -118,9 +118,37 @@ Nesse cenário, a solução proposta foi obter a combinação de dias original d
 
 ### 3. Resultados
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pulvinar nisl vestibulum tortor fringilla, eget imperdiet neque condimentum. Proin vitae augue in nulla vehicula porttitor sit amet quis sapien. Nam rutrum mollis ligula, et semper justo maximus accumsan. Integer scelerisque egestas arcu, ac laoreet odio aliquet at. Sed sed bibendum dolor. Vestibulum commodo sodales erat, ut placerat nulla vulputate eu. In hac habitasse platea dictumst. Cras interdum bibendum sapien a vehicula.
+Como explicado no [Resumo](#resumo) e na [Introdução](#1-introdução), foram avaliadas duas estratégias principais de otimização: a primeira, utilizando uma função objetivo agregada — com o valor dos dois objetivos somados e ponderados — e seleção por torneio; e a segunda, utilizando uma função objetivo com uma tupla de valores e seleção NSGA-II (Non-dominated Sorting Genetic Algorithm).
 
-Proin feugiat nulla sem. Phasellus consequat tellus a ex aliquet, quis convallis turpis blandit. Quisque auctor condimentum justo vitae pulvinar. Donec in dictum purus. Vivamus vitae aliquam ligula, at suscipit ipsum. Quisque in dolor auctor tortor facilisis maximus. Donec dapibus leo sed tincidunt aliquam.
+Para tanto, em cada uma dessas estratégias foi avaliado o impacto no resultado da função objetivo ao realizar alterações no algoritmo, quantidade de gerações, tamanho da população, percentual de cruzamento (_crossover_) e percentual de mutações.
+
+#### 3.1. Otimização com função objetivo agregada
+
+A primeira estratégia avaliada foi a de otimização com um único objetivo, utilizando a `funcao_objetivo_agregada`, conforme detalhado na seção [2.4](#24-função-de-restrição-e-objetivo). O algoritmo foi executado três vezes para cada cenário avaliado, e o gráfico abaixo mostra, para cada um deles, a média dos valores da função objetivo. 
+
+As barras destacadas em verde correspondem aos cenários com maior percentual de mutação, enquanto as barras laranjas representam os casos com maior precentual de cruzamento.
+
+![Comparativo de parâmetros com base na média da função objetivo agregada](assets\compilado_resultados\media_objetivo_por_cenario.png)
+
+Já o gráfico abaixo, mostra o resultado para cada uma das execuções do algoritmo de otimização, para avaliarmos a consisência.
+
+![Comparativo de parâmetros com base na média da função objetivo agregada](assets\compilado_resultados\detalhe_objetivo_por_cenario.png)
+
+A partir dos gráficos apresentados, podemos inferir que o **aumento da população e número de gerações teve um impacto positivo**, melhorando em todos os casos o resultado obtido. É possível atribuir esse efeito em maior peso ao aumento da população, pois, **apenas em um caso a convergência ocorreu após a geração 150**, mostrado na figura abaixo.
+
+![Único cenário com convergência tardia](assets\compilado_resultados\convergencia_tardia.png)
+
+Com populações menores, **o uso do algoritmo `eaMuPlusLambda` pareceu conseguiu gerar resultados melhores de maneira mais consistente, especialmente no cenário com maior percentual de mutação**. O algoritmo `eaSimple` mostrou o comportamento oposto com populações menores: os melhores resultados foram apresentados no cenário com menor percentual de mutação e maior probabilidade de cruzamentos.
+
+Além disso, entre os cenários com 300 gerações e população de 500 indivíduos, **o `eaSimple` retornou o melhor resultado obtido, com média de 1,883, e chegando no valor de 1,89**. Esse é o máximo encontrado em todos os cenários avaliados (inclusive com outras estratégias).
+
+#### 3.1. Otimização com função objetivo segregada e NSGA-II
+
+A segunda estratégia avaliada foi a de otimização com múltiplos objetivos, utilizando a `funcao_objetivo`, conforme detalhado na seção [2.4](#24-função-de-restrição-e-objetivo). O algoritmo foi executado três vezes para cada cenário avaliado, e o gráfico abaixo mostra, para cada um deles, o valor de cada um dos objetivos (atendimento aos relacionamentos e à ocupação). 
+
+![Comparativo de parâmetros com base na média da função objetivo segregada](assets\compilado_resultados\funcao_objetivo_por_cenario_segregada.png)
+
+Observa-se de imediato que o algoritmo `eaSimple` não conseguiu entregar bons resultados na otimização com múltiplos objetivos e que o aumento da população e da quantidade de gerações não surtiu efeito. Mesmo com taxas maiores de mutação, não foi possível gerar indivíduos válidos que atendessem a todos os relacionamentos (_obj. relacionamentos = 1_), fato que foi observado com esse mesmo algoritmo quando utilizada a função objetivo agregada.
 
 ### 4. Conclusões
 
