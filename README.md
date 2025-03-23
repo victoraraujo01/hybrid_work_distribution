@@ -130,15 +130,15 @@ A primeira estratégia avaliada foi a de otimização com um único objetivo, ut
 
 As barras destacadas em verde correspondem aos cenários com maior percentual de mutação, enquanto as barras laranjas representam os casos com maior precentual de cruzamento.
 
-![Comparativo de parâmetros com base na média da função objetivo agregada](assets\compilado_resultados\media_objetivo_por_cenario.png)
+![Comparativo de parâmetros com base na média da função objetivo agregada](assets/compilado_resultados/media_objetivo_por_cenario.png)
 
 Já o gráfico abaixo, mostra o resultado para cada uma das execuções do algoritmo de otimização, para avaliarmos a consisência.
 
-![Comparativo de parâmetros com base na média da função objetivo agregada](assets\compilado_resultados\detalhe_objetivo_por_cenario.png)
+![Comparativo de parâmetros com base na média da função objetivo agregada](assets/compilado_resultados/detalhe_objetivo_por_cenario.png)
 
 A partir dos gráficos apresentados, podemos inferir que o **aumento da população e número de gerações teve um impacto positivo**, melhorando em todos os casos o resultado obtido. É possível atribuir esse efeito em maior peso ao aumento da população, pois, **apenas em um caso a convergência ocorreu após a geração 150**, mostrado na figura abaixo.
 
-![Único cenário com convergência tardia](assets\compilado_resultados\convergencia_tardia.png)
+![Único cenário com convergência tardia](assets/compilado_resultados/convergencia_tardia.png)
 
 Com populações menores, **o uso do algoritmo `eaMuPlusLambda` pareceu conseguiu gerar resultados melhores de maneira mais consistente, especialmente no cenário com maior percentual de mutação**. O algoritmo `eaSimple` mostrou o comportamento oposto com populações menores: os melhores resultados foram apresentados no cenário com menor percentual de mutação e maior probabilidade de cruzamentos.
 
@@ -148,13 +148,13 @@ Além disso, entre os cenários com 300 gerações e população de 500 indivíd
 
 A segunda estratégia avaliada foi a de otimização com múltiplos objetivos, utilizando a `funcao_objetivo`, conforme detalhado na seção [2.4](#24-função-de-restrição-e-objetivo). O algoritmo foi executado três vezes para cada cenário avaliado, e o gráfico abaixo mostra, para cada um deles, o valor de cada um dos objetivos (atendimento aos relacionamentos e à ocupação). 
 
-![Comparativo de parâmetros com base na média da função objetivo segregada](assets\compilado_resultados\funcao_objetivo_por_cenario_segregada.png)
+![Comparativo de parâmetros com base na média da função objetivo segregada](assets/compilado_resultados/funcao_objetivo_por_cenario_segregada.png)
 
 Observa-se de imediato que **o algoritmo `eaSimple` não conseguiu entregar bons resultados na otimização com múltiplos objetivos** e que o aumento da população e da quantidade de gerações não surtiu efeito. Mesmo com taxas maiores de mutação, não foi possível gerar indivíduos válidos que atendessem a todos os relacionamentos (_obj. relacionamentos = 1_), fato que foi observado com esse mesmo algoritmo quando utilizada a função objetivo agregada.
 
 Já **o algoritmo `eaMuPlusLambda` mostrou resultados bem melhores e foi positivamente impactado pelo aumento das gerações e população**. Nesse caso, o aumento da quantidade de gerações parece também ter sido importante, pois em todas as execuções com 150 gerações e população de 300 indivíduos houve alterações na frente de pareto após a centésima geração. Nos casos com maior percentual de mutação as mudanças ocorreram mais próximo ainda do término, sempre após a geração 140, conforme gráfico abaixo.
 
-![Evolução de uma das execuções com função de objetivo segregado e 150 gerações](assets\compilado_resultados\exemplo_segregado_convergencia_populacao_pequena.png)
+![Evolução de uma das execuções com função de objetivo segregado e 150 gerações](assets/compilado_resultados/exemplo_segregado_convergencia_populacao_pequena.png)
 
 Com **a população de 500 indivíduos e a otimização em 300 gerações, todas as execuções com o `eaMuPlusLambda` apresentaram indivíduos válidos que atendessem a todos os relacionamentos (_obj. relacionamentos = 1_) na frente de pareto e chegaram a atingir o valor máximo de 1,89**. 
 
