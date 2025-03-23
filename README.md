@@ -122,6 +122,8 @@ Como explicado no [Resumo](#resumo) e na [Introdução](#1-introdução), foram 
 
 Para tanto, em cada uma dessas estratégias foi avaliado o impacto no resultado da função objetivo ao realizar alterações no algoritmo, quantidade de gerações, tamanho da população, percentual de cruzamento (_crossover_) e percentual de mutações.
 
+Utilizou-se como entrada os arquivos `pessoas_por_gerencia.csv` e `relacionamentos.csv` disponibilizados no repositório, retratando um cenário hipotético com 24 setores com 498 funcionários e um edifício com 290 postos de trabalho. 
+
 #### 3.1. Otimização com função objetivo agregada
 
 A primeira estratégia avaliada foi a de otimização com um único objetivo, utilizando a `funcao_objetivo_agregada`, conforme detalhado na seção [2.4](#24-função-de-restrição-e-objetivo). O algoritmo foi executado três vezes para cada cenário avaliado, e o gráfico abaixo mostra, para cada um deles, a média dos valores da função objetivo. 
@@ -142,13 +144,55 @@ Com populações menores, **o uso do algoritmo `eaMuPlusLambda` pareceu consegui
 
 Além disso, entre os cenários com 300 gerações e população de 500 indivíduos, **o `eaSimple` retornou o melhor resultado obtido, com média de 1,883, e chegando no valor de 1,89**. Esse é o máximo encontrado em todos os cenários avaliados (inclusive com outras estratégias).
 
-#### 3.1. Otimização com função objetivo segregada e NSGA-II
+#### 3.2. Otimização com função objetivo segregada e NSGA-II
 
 A segunda estratégia avaliada foi a de otimização com múltiplos objetivos, utilizando a `funcao_objetivo`, conforme detalhado na seção [2.4](#24-função-de-restrição-e-objetivo). O algoritmo foi executado três vezes para cada cenário avaliado, e o gráfico abaixo mostra, para cada um deles, o valor de cada um dos objetivos (atendimento aos relacionamentos e à ocupação). 
 
 ![Comparativo de parâmetros com base na média da função objetivo segregada](assets\compilado_resultados\funcao_objetivo_por_cenario_segregada.png)
 
-Observa-se de imediato que o algoritmo `eaSimple` não conseguiu entregar bons resultados na otimização com múltiplos objetivos e que o aumento da população e da quantidade de gerações não surtiu efeito. Mesmo com taxas maiores de mutação, não foi possível gerar indivíduos válidos que atendessem a todos os relacionamentos (_obj. relacionamentos = 1_), fato que foi observado com esse mesmo algoritmo quando utilizada a função objetivo agregada.
+Observa-se de imediato que **o algoritmo `eaSimple` não conseguiu entregar bons resultados na otimização com múltiplos objetivos** e que o aumento da população e da quantidade de gerações não surtiu efeito. Mesmo com taxas maiores de mutação, não foi possível gerar indivíduos válidos que atendessem a todos os relacionamentos (_obj. relacionamentos = 1_), fato que foi observado com esse mesmo algoritmo quando utilizada a função objetivo agregada.
+
+Já **o algoritmo `eaMuPlusLambda` mostrou resultados bem melhores e foi positivamente impactado pelo aumento das gerações e população**. Nesse caso, o aumento da quantidade de gerações parece também ter sido importante, pois em todas as execuções com 150 gerações e população de 300 indivíduos houve alterações na frente de pareto após a centésima geração. Nos casos com maior percentual de mutação as mudanças ocorreram mais próximo ainda do término, sempre após a geração 140, conforme gráfico abaixo.
+
+![Evolução de uma das execuções com função de objetivo segregado e 150 gerações](assets\compilado_resultados\exemplo_segregado_convergencia_populacao_pequena.png)
+
+Com **a população de 500 indivíduos e a otimização em 300 gerações, todas as execuções com o `eaMuPlusLambda` apresentaram indivíduos válidos que atendessem a todos os relacionamentos (_obj. relacionamentos = 1_) na frente de pareto e chegaram a atingir o valor máximo de 1,89**. 
+
+**A diferença entre os cenários com percentual de mutação e crossover diferentes não foi significativa**, sendo menor do que 1%, na média.
+
+Uma vantagem da estratégia de otimização com múltiplos objetivos utilizando a função objetivo segregada é a interpretação dos melhores resultados através da frente de pareto. Esse mecanismo permite avaliar os melhores indivíduos priorizando independentemente cada um dos objetivods e, assim, ter uma visão mais ampla das soluções possíveis. 
+
+No contexto específico desse problema, o objetivo da ocupação era mais facilmente atendido e não seria tão crítico desde que o limite de postos de trabalho não fosse ultrapassado. Assim, a análise acabou se resumindo a quais indivíduos atendiam mais relacionamentos entre os setores. Contudo, num problema diferente em que os objetivos sejam conflitantes entre si, a análise da frente de pareto traz maior clareza do que se ganha ou perde com cada solução.
+
+Abaixo está mostrado o *melhor indivíduo encontrado em todos os cenários, com o algoritmo `muPlusLambda`, NSGA-II, 300 gerações, população de 500 indivíduos, 40% de crossover e 60% de mutação.
+
+| Setor    | Segunda | Terça   | Quarta  | Quinta  | Sexta   |
+|----------|---------|---------|---------|---------|---------|
+| A        | 4       | 4       | 4       | 0       | 0       |
+| B        | 0       | 0       | 0       | 0       | 0       |
+| C        | 17      | 0       | 17      | 17      | 0       |
+| D        | 1       | 0       | 0       | 1       | 0       |
+| E        | 0       | 61      | 0       | 61      | 61      |
+| F        | 0       | 0       | 0       | 13      | 13      |
+| G        | 3       | 3       | 3       | 0       | 0       |
+| H        | 0       | 0       | 0       | 0       | 0       |
+| I        | 52      | 52      | 52      | 0       | 0       |
+| J        | 8       | 8       | 0       | 0       | 0       |
+| K        | 0       | 0       | 72      | 72      | 72      |
+| L        | 0       | 0       | 0       | 18      | 18      |
+| M        | 35      | 35      | 35      | 0       | 0       |
+| N        | 24      | 24      | 0       | 0       | 0       |
+| O        | 0       | 0       | 0       | 0       | 0       |
+| P        | 4       | 4       | 0       | 0       | 0       |
+| Q        | 29      | 29      | 29      | 0       | 0       |
+| R        | 7       | 7       | 0       | 0       | 0       |
+| S        | 0       | 0       | 48      | 48      | 48      |
+| T        | 0       | 0       | 0       | 13      | 13      |
+| U        | 11      | 11      | 0       | 11      | 0       |
+| V        | 1       | 0       | 0       | 1       | 0       |
+| W        | 13      | 13      | 13      | 0       | 0       |
+| X        | 4       | 4       | 0       | 0       | 0       |
+| **Total**| **213** | **255** | **273** | **255** | **225** |
 
 ### 4. Conclusões
 
@@ -158,7 +202,7 @@ Proin feugiat nulla sem. Phasellus consequat tellus a ex aliquet, quis convallis
 
 ---
 
-Matrícula: 123.456.789
+Matrícula: 221.101.037
 
 Pontifícia Universidade Católica do Rio de Janeiro
 
