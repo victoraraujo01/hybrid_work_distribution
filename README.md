@@ -160,11 +160,11 @@ Com **a população de 500 indivíduos e a otimização em 300 gerações, todas
 
 **A diferença entre os cenários com percentual de mutação e crossover diferentes não foi significativa**, sendo menor do que 1%, na média.
 
-Uma vantagem da estratégia de otimização com múltiplos objetivos utilizando a função objetivo segregada é a interpretação dos melhores resultados através da frente de pareto. Esse mecanismo permite avaliar os melhores indivíduos priorizando independentemente cada um dos objetivods e, assim, ter uma visão mais ampla das soluções possíveis. 
+Uma vantagem da estratégia de otimização com múltiplos objetivos utilizando a função objetivo segregada é a interpretação dos melhores resultados através da frente de pareto. **Esse mecanismo permite avaliar os melhores indivíduos priorizando independentemente cada um dos objetivos e, assim, ter uma visão mais ampla das soluções possíveis**. 
 
-No contexto específico desse problema, o objetivo da ocupação era mais facilmente atendido e não seria tão crítico desde que o limite de postos de trabalho não fosse ultrapassado. Assim, a análise acabou se resumindo a quais indivíduos atendiam mais relacionamentos entre os setores. Contudo, num problema diferente em que os objetivos sejam conflitantes entre si, a análise da frente de pareto traz maior clareza do que se ganha ou perde com cada solução.
+No contexto específico desse problema, o objetivo da ocupação era mais facilmente atendido e não seria tão crítico desde que o limite de postos de trabalho não fosse ultrapassado (condição mapeada na função de restrição). Assim, a análise acabou se resumindo a quais indivíduos atendiam mais relacionamentos entre os setores. Contudo, num problema diferente em que os objetivos sejam conflitantes entre si, a análise da frente de pareto traz maior clareza do que se ganha ou perde com cada solução.
 
-Abaixo está mostrado o *melhor indivíduo encontrado em todos os cenários, com o algoritmo `muPlusLambda`, NSGA-II, 300 gerações, população de 500 indivíduos, 40% de crossover e 60% de mutação.
+Abaixo está mostrado o **melhor indivíduo encontrado em todos os cenários**, com o algoritmo `muPlusLambda`, NSGA-II, 300 gerações, população de 500 indivíduos, 40% de crossover e 60% de mutação.
 
 | Setor    | Segunda | Terça   | Quarta  | Quinta  | Sexta   |
 |----------|---------|---------|---------|---------|---------|
@@ -196,9 +196,13 @@ Abaixo está mostrado o *melhor indivíduo encontrado em todos os cenários, com
 
 ### 4. Conclusões
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pulvinar nisl vestibulum tortor fringilla, eget imperdiet neque condimentum. Proin vitae augue in nulla vehicula porttitor sit amet quis sapien. Nam rutrum mollis ligula, et semper justo maximus accumsan. Integer scelerisque egestas arcu, ac laoreet odio aliquet at. Sed sed bibendum dolor. Vestibulum commodo sodales erat, ut placerat nulla vulputate eu. In hac habitasse platea dictumst. Cras interdum bibendum sapien a vehicula.
+Ao longo do desenvolvimento desse trabalho foram analisadas várias estratégias possíveis para a solução de um problema de otimização com múltiplos objetivos utilizando algoritmos genéticos implementados com a biblioteca `deap` em Python.
 
-Proin feugiat nulla sem. Phasellus consequat tellus a ex aliquet, quis convallis turpis blandit. Quisque auctor condimentum justo vitae pulvinar. Donec in dictum purus. Vivamus vitae aliquam ligula, at suscipit ipsum. Quisque in dolor auctor tortor facilisis maximus. Donec dapibus leo sed tincidunt aliquam.
+No contexto específico deste problema, o melhor resultado foi obtido utilizando o algoritmo `muPlusLambda`, com a seleção por NSGA-II, 300 gerações, população de 500 indivíduos, 40% de crossover e 60% de mutação. Em particular, o uso do algoritmo `muPlusLambda` viabilizou a utilização do NSGA-II, que não chegava a entregar bons resultados com o `eaSimple`. Em todas as 6 execuções feitas com `muPlusLambda` e NSGA-II foi possível chegar no ótimo global para o objetivo de atendimento aos relacionamentos, mesmo com diferentes percentuais de mutação e crossover.
+
+Todavia, uma abordagem mais simples, utilizando uma função objetivo agregada (somando as parcelas do objetivo de atendimento aos relacionamentos e ao critério da ocupação), seleção por torneio e o algoritmo `muPlusLambda`, se mostrou muito eficaz no cenário com menor população e quantidade de gerações, podendo ser uma alternativa viável em um contexto com limitação de recursos computacionais.
+
+Visando ampliar o escopo do problema analizado, sugere-se explorar também em trabalhos futuros o tema de otimização da distribuição de colaboradores no espaço físico, buscando posicionar os setores relacionados fisicamente mais próximos e tentando mantê-los sempre ocupando as mesmas posições ao longo da semana.
 
 ---
 
